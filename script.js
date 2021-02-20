@@ -1,36 +1,53 @@
 // Assignment Code
+var generateBtn = document.querySelector("#generate");
+var ADDlow
+var ADDnum
+var ADDlow
+var ADDup
 
 // Variables
-var allch = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
-var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var lower = "abcdefghijklmnopqrstuvwxyz";
-var number = "0123456789";
-var symbol = !"!@#$%^&*()_+";
-var passwordText = document.querySelector("#password");
-var generateBtn = document.querySelector("#generate");
-var passwordgen = "";
-var passLength = 8
-
-var length = document.querySelector("#passlength");
-var uppercasin = document.querySelector("#upper");
-var lowercasin = document.querySelector("#lower");
-var numberin= document.querySelector("#num")
-var symbolin = document.querySelector("#sym")
-
-// Password Generator
+nums = ["0","1","2","3","4","5","6","7","8","9"]
+lowLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+upLetters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+sym = ["!","@","#","$","%","^","&","*","(",")","-","=","+"]
+// Write password to the #password input
 function writePassword() {
-  passwordgen = "";
-  
+  // Prompts Question length
+  var question = window.prompt("How long would you like your password? Min:8 Max:128");
 
-  for (var i = 0; i < passLength; i++) {
-    var password = Math.floor(Math.random() * allch.length);
-    
+   if (question < 8 || question >128) {
+    window.alert("Must be within specified range (8-128 characters)")
+   }
+  else if  (question===false) {
+    return;
+  
+  }
+  else {
+    ADDnum = window.confirm('Would you like to include numbers?')
+    if (Confirmnum === true){
+      window.alert("You have chosen to include numbers!")
+    }
+    ADDup = window.confirm('Would you like to include uppercase?')
+    if (Confirmup === true){
+      window.alert("You have chosen to include uppercase!")
+    }
+    ADDlow = window.confirm('Would you like to include lowercase?')
+    if (Confirmlow === true){
+      window.alert("You have chosen to include lowercase!")
+    }
+    ADDsym = window.confirm('Would you like to include symbols?')
+    if (Confirmsym === true){
+      window.alert("You have chosen to include symbols!")
+    }
   }
 
-  passwordText.value = password;
 
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
 }
 
 
-generateBtn.addEventListener("click", writePassword );
-
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword)
