@@ -6,6 +6,8 @@ On inputting attributes that you would like your password to contain , my applic
 
 The motivation behind this project is to create passwords that are randomized to create safer experiences as well as showcase my skill as a web developer. As I work on this project I learned different html tags and javascript formulas to show different results.
 
+![Image of Usage](images/randompassgen.png)
+
 See deployed site here: [Deployed Site](https://basedmilz.github.io/pass-gen-mh/)
 
 
