@@ -36,15 +36,17 @@ function generatePassword() {
   if (addSym === true ) { window.alert('Confirmed Symbols!') }
   if (addNum === true) {final = final.concat(nums)}
 console.log("addNum",final)
+
+
 if (addUp === true) {final = final.concat(upLetters)}
 console.log("addUp",final)
 if (addLow=== true) {final = final.concat(lowLetters)}
 if (addSym === true) {final = final.concat(sym)}
 console.log(final)
 var finalPassword = ""
-for (var i = 0; i < question ; i++) {
-  var index = Math.floor(Math.random() * final.length )
-  finalPassword = final[index];
+for (var i = 1; i <= question ; i++) {
+  var index = (Math.floor(Math.random() * final.length) + 1);
+  finalPassword += final[index];
   console.log(finalPassword)
 } 
 return finalPassword
